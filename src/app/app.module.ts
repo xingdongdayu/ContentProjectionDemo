@@ -4,6 +4,12 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { ChildComponent } from './child/child.component';
 import { Child2Component } from './child2/child2.component';
+import {RouterModule, Routes} from "@angular/router";
+
+var routeConfig: Routes = [
+  {path: '', component: ChildComponent},
+  {path: 'child2', component: Child2Component},
+]
 
 @NgModule({
   declarations: [
@@ -12,7 +18,8 @@ import { Child2Component } from './child2/child2.component';
     Child2Component
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(routeConfig)
   ],
   providers: [],
   bootstrap: [AppComponent]
